@@ -6,18 +6,18 @@ class Helper {
         const keys = {
             client_id: "UBYJXUH5DXAO0XZ2YKVPBPS14PJUVIT112BOYULCBVOEOSG4",
             client_secret: "UCFQYL03242A1YW3O1QHHBVJKDPTE4A4QJI53LQWMYRN3THP",
-            vers: "20181008"
+            v: "20181008"
         };
         return Object.keys(keys)
-        .map(key => `${key} = ${keys[key]}`)
-        .join("$");
+        .map(key => `${key}=${keys[key]}`)
+        .join("&");
     }
     static urlBuilder(urlParams) {
         if (!urlParams) {
             return "";
         }
         return Object.keys(urlParams)
-        .map(key => `${key} = ${urlParams[key]}`)
+        .map(key => `${key}=${urlParams[key]}`)
         .join("&");
     }
     static headers() {

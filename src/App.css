@@ -1,5 +1,71 @@
 .App {
   text-align: center;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: row nowrap;
+  background-color:#262932b0
+
+}
+
+/* .Page {
+  padding: 0 0 80px;
+  background-image: url("images/wht-bg.jpg");
+  background-repeat: repeat;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #BBB;
+  box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.25);
+} */
+
+#search {
+  text-align: center;
+  font-weight: 900;
+  font-size: 16px;
+  color: #f4f4f4;
+  background: #0000008f;
+  width: 100%;
+  border: 0;
+  font-family: 'Lato', sans-serif;
+  padding: 8px 0;
+  -webkit-box-shadow: inset 10px 15px 21px -8px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 10px 15px 21px -8px rgba(0,0,0,0.75);
+  box-shadow: inset 10px 15px 21px -8px rgba(0,0,0,0.75);
+}
+
+.sideBar {
+  width: 25%;
+}
+
+.venueList {
+padding: 2px;
+}
+
+.listItem {
+  list-style: none;
+  font-size: 1rem;
+  padding: 8px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  font-family: cursive;
+  background-image: url("images/wht-bg.jpg");
+  margin: 4px;
+  color: #2f4e4e;
+  cursor: pointer;
+  border:3px solid #2eb9ce38;
+  display: flex;
+  align-items: center;
+}
+
+.listItem:hover {
+color: rgb(0, 199, 199);
+border:3px solid #2eb9ce;
+}
+
+li img {
+  background-color: #1e79696e;
+  border-radius: 17px;
 }
 
 .App-logo {
