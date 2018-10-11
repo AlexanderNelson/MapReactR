@@ -2,6 +2,8 @@ class Helper {
     static baseURL () {
         return "https://api.foursquare.com/v2";
     }
+    //keys for foursquare auth
+    //version required-only update after code review
     static auth() {
         const keys = {
             client_id: "UBYJXUH5DXAO0XZ2YKVPBPS14PJUVIT112BOYULCBVOEOSG4",
@@ -38,6 +40,7 @@ class Helper {
         ).then(res => res.json());
     }
 }
+//Foursquare location info
 export default class SquareApi {
     static search(urlParams) {
         return Helper.simpleFetch("/venues/search", "GET", urlParams);

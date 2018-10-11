@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import VenueList from "./VenueList";
+import VenueList from "./venue-list";
 
 export default class SideBar extends Component {
     constructor() {
@@ -25,6 +25,7 @@ export default class SideBar extends Component {
               .toLowerCase()
               .includes(e.target.value.toLowerCase());
             const marker = this.props.markers.find(marker => marker.id === venue.id);
+            // filters venues as input matches
             if(isMatched) {
                 marker.isVisible = true;
             } else {
@@ -35,17 +36,22 @@ export default class SideBar extends Component {
         this.props.updateSuperState({ markers })
     };
     render() {
-        return (<div className="sideBar">
-                <input 
+        return (
+            <div className="sideBar">
+            {/* search bar */}
+            <input 
                 type={"search"} 
                 id={"search"} 
                 placeholder={"...Venue Search"} 
                 onChange={this.handleChange}/>
+            {/* foursquare logo */}
+            <img className="foursquare" src={window.location.origin + '/foursquare.png'} alt="powered by foursquare"/>
 
             <VenueList 
             {...this.props} 
             venues={this.handleFilterVenues()}
             handleListItemClick={this.props.handleListItemClick} />
-        </div>)
+        </div>
+        )
     }
 }

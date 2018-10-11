@@ -5,7 +5,6 @@
   display: flex;
   flex-flow: row nowrap;
   background-color:#262932b0
-
 }
 
 /* .Page {
@@ -19,7 +18,7 @@
   box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.25);
 } */
 
-#search {
+#search, .foursquare {
   text-align: center;
   font-weight: 900;
   font-size: 16px;
@@ -36,6 +35,7 @@
 
 .sideBar {
   width: 25%;
+  border: 1px solid #1e4277;
 }
 
 .venueList {
@@ -45,7 +45,7 @@ padding: 2px;
 .listItem {
   list-style: none;
   font-size: 1rem;
-  padding: 8px;
+  padding: 1px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
   border-radius: 4px;
   font-family: cursive;
@@ -66,11 +66,7 @@ border:3px solid #2eb9ce;
 li img {
   background-color: #1e79696e;
   border-radius: 17px;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+  margin: 4px;
 }
 
 .App-header {
@@ -84,15 +80,27 @@ li img {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+@media only screen and (max-width: 534px) {
+  .listItem {
+      flex-direction: column;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+@media only screen and (max-width: 976px) {
+  .listItem {
+      font-size: 2vw;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media only screen and (max-width: 976px) {
+  .listItem img {
+      width: 3vw;
+  }
+}
+
+@media only screen and (max-width: 534px) {
+  .listItem img {
+    width: 5vw;
   }
 }

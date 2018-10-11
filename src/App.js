@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
-import SquareAPI from "./API/";
-import Map from "./component/Map";
-import SideBar from './component/SideBar';
+import './app.css';
+import SquareAPI from "./api";
+import Map from "./component/map";
+import SideBar from './component/side-bar';
 
 class App extends Component {
     constructor() {
@@ -73,6 +73,9 @@ handleListItemClick = venue => {
         handleListItemClick={this.handleListItemClick} />
         <Map {...this.state}
         handleMarkerClick={this.handleMarkerClick} />
+        {/* <Details {...this.state} 
+        handleListItemClick={this.handleListItemClick} /> */}
+        
       </div>
     );
   }
