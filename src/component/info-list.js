@@ -7,7 +7,7 @@ export default class InfoList extends Component {
         return (
         <ol className="info-list">
             {this.props.venues && this.props.venues.map((venue, idx) => (
-            <PaneData key={idx} {...venue} handleListItemClick={this.props.handleListItemClick}/>
+            <PaneData key={idx} {...venue} />
         ))}
         </ol>
         );

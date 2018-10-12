@@ -70,6 +70,11 @@ handleListItemClick = venue => {
     }
   render() {
     return (
+      <main>
+      <header id="title">
+        <h1 >MapReactR</h1>
+        <h2>Information and Locations of Taco Providers</h2>
+      </header>
       <div className="App">
         <SideBar {...this.state} 
         handleListItemClick={this.handleListItemClick} />
@@ -80,6 +85,7 @@ handleListItemClick = venue => {
         <InfoPane {...this.state} 
         handleListItemClick={this.handleListItemClick}/>
       </div>
+      </main>
     );
   }
 }

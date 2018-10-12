@@ -39,11 +39,13 @@ export default class SideBar extends Component {
         return (
             <div className="sideBar">
             {/* search bar */}
-            <input 
+            <div className="cursor">
+              <input className="rq-form-element" autoFocus
                 type={"search"} 
                 id={"search"} 
                 placeholder={"...Venue Search"} 
                 onChange={this.handleChange}/>
+            </div>
             {/* foursquare logo */}
             <img className="foursquare" src={window.location.origin + '/foursquare.png'} alt="powered by foursquare"/>
 
