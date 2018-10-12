@@ -3,6 +3,8 @@ import './app.css';
 import SquareAPI from "./api";
 import Map from "./component/map";
 import SideBar from './component/side-bar';
+import InfoPane from './component/info-pane';
+
 
 class App extends Component {
     constructor() {
@@ -75,7 +77,8 @@ handleListItemClick = venue => {
         handleMarkerClick={this.handleMarkerClick} />
         {/* <Details {...this.state} 
         handleListItemClick={this.handleListItemClick} /> */}
-        
+        <InfoPane {...this.state} 
+        handleListItemClick={this.handleListItemClick}/>
       </div>
     );
   }
