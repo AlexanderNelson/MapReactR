@@ -2,12 +2,18 @@ import React, {Component} from "react";
 
 export default class PaneData extends Component {
     render() {
-        return <li className="paneData" onLoad={() => this.props.handleListItemClick(this.props)}>
-        <img src={this.props.categories[0].icon.prefix+"32"+this.props.categories[0].icon.suffix} alt={this.props.categories[0].name}/>
-          {this.props.name}  
-          {this.props.timeZone}  
-          
+        return (
+            
+        <div className="pane-data" onClick={() => this.props.handleListItemClick(this.props)}>
+        {/* <img src={this.props.categories[0].icon.prefix+"32"+this.props.categories[0].icon.suffix} alt={this.props.categories[0].name}/> */}
+         <h3>{this.props.name}</h3>   
+          <a href={this.props.shortUrl}>Check 'em Out On Foursqaure</a>
+          {/* {this.props.contact[0]}   */}
+          {/* {this.props.hours.status}   */}
+          <li>{this.props.location.address}  </li>
 
-        </li>
+        
+        </div>
+        );
     }
 }

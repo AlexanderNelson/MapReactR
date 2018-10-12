@@ -62,7 +62,7 @@ export default class Map extends Component {
         googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAJlJZKFDJ7twOL6eu4CgPYK2awQ-P9WkU"
         loadingElement={<div style={{ height: `100%` }} />}
         //sizes map to allow room for sidebar
-        containerElement={<div style={{ height: `100%`, width: `50%` }} />}
+        containerElement={<div style={{ height: `100%`, width: `49%` }} />}
         mapElement={<div style={{ height: `100%` }} />}
       />
     )}

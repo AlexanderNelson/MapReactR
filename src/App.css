@@ -4,7 +4,7 @@
   width: 100vw;
   display: flex;
   flex-flow: row nowrap;
-  background-color:#262932b0
+  background-color: #262932b0
 }
 
 /* .Page {
@@ -18,7 +18,9 @@
   box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.25);
 } */
 
-#search, .foursquare, .info-pane h2 {
+#search,
+.foursquare,
+.info-pane h2 {
   text-align: center;
   font-weight: 900;
   font-size: 16px;
@@ -28,18 +30,40 @@
   border: 0;
   font-family: 'Lato', sans-serif;
   padding: 8px 0;
-  -webkit-box-shadow: inset 10px 15px 21px -8px rgba(0,0,0,0.75);
-  -moz-box-shadow: inset 10px 15px 21px -8px rgba(0,0,0,0.75);
-  box-shadow: inset 10px 15px 21px -8px rgba(0,0,0,0.75);
+  -webkit-box-shadow: inset 10px 15px 21px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 10px 15px 21px -8px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 10px 15px 21px -8px rgba(0, 0, 0, 0.75);
 }
 
-.sideBar, .info-pane {
+.pane-data {
+  list-style: none;
+  font-size: .5rem;
+  padding: 1px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  font-family: cursive;
+  margin: 4px;
+  color: #2f4e4e;
+  cursor: pointer;
+  border: 3px solid #2eb9ce38;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.sideBar {
+  width: 24%;
+  border: 1px solid #1e4277;
+}
+
+.info-pane {
   width: 25%;
   border: 1px solid #1e4277;
 }
 
-.venueList {
-padding: 2px;
+.venueList,
+.info-list {
+  padding: 2px;
 }
 
 .listItem {
@@ -53,14 +77,15 @@ padding: 2px;
   margin: 4px;
   color: #2f4e4e;
   cursor: pointer;
-  border:3px solid #2eb9ce38;
+  border: 3px solid #2eb9ce38;
   display: flex;
   align-items: center;
 }
 
-.listItem:hover {
-color: rgb(0, 199, 199);
-border:3px solid #2eb9ce;
+.listItem:hover,
+.pane-data:hover {
+  color: rgb(0, 199, 199);
+  border: 3px solid #2eb9ce;
 }
 
 li img {
@@ -80,22 +105,26 @@ li img {
   color: white;
 }
 
+
+
 @media only screen and (max-width: 534px) {
-  .listItem {
-      flex-direction: column;
+
+  .listItem,
+  .pane-data {
+    flex-direction: column;
   }
 }
 
 
 @media only screen and (max-width: 976px) {
   .listItem {
-      font-size: 2vw;
+    font-size: 2vw;
   }
 }
 
 @media only screen and (max-width: 976px) {
   .listItem img {
-      width: 3vw;
+    width: 3vw;
   }
 }
 
