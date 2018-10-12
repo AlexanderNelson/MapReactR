@@ -15,6 +15,14 @@ body {
   text-align: center;
 }
 
+p {
+  font-size: 1.3vw;
+}
+
+a {
+  font-size: 1.4vw;
+}
+
 h1 {
   margin: 0px;
   font-family: cursive;
@@ -26,6 +34,18 @@ h2 {
 
 h3, #title, #search {
   margin: 0 0 .83em 0;
+}
+
+h3 {
+  font-size: 1.5vw;
+}
+
+h4, ol.venueList {
+  margin: 0;
+}
+
+p {
+  margin: 3px;
 }
 
 /* searchbar flashing cursor */
@@ -49,12 +69,34 @@ h3, #title, #search {
   display: none;
 }
 
+#search {
+  animation: blink 1s infinite;
+  animation-timing-function: cubic-bezier(0.9, -0.43, 0.77, 1.15);
+  opacity: 1;
+  text-align: center;
+  font-weight: 900;
+  font-size: 1.7vw;
+  color: #500000;
+  background: #92bfe6;
+  width: 100%;
+  border: 3px solid gray;
+  font-family: 'Lato', sans-serif;
+  padding: 4px 1px;
+  -webkit-box-shadow: inset 10px 15px 21px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 10px 15px 21px -8px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 10px 15px 21px -8px rgba(0, 0, 0, 0.75);
+}
+
 @keyframes blink {
   from { opacity: 1; }
   to { opacity: 0; }
 }
 
-#search,
+#search:focus, #search:hover {
+  background-color: #2eb9ce;
+  animation: step-end;
+}
+
 .foursquare,
 .info-pane h2, h3, #title {
   text-align: center;
@@ -81,7 +123,7 @@ h3, #title, #search {
   margin: 4px;
   color: #2f4e4e;
   cursor: pointer;
-  border: 3px solid #2eb9ce38;
+  border: 2px solid #2eb9ce38;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -95,6 +137,7 @@ h3, #title, #search {
 .info-pane {
   width: 25%;
   border: 1px solid #1e4277;
+  overflow: auto;
 }
 
 .venueList,
@@ -102,7 +145,7 @@ h3, #title, #search {
   padding: 2px;
 }
 
-.listItem {
+.listItem, .pane-data {
   list-style: none;
   font-size: 1rem;
   padding: 1px;
@@ -121,21 +164,13 @@ h3, #title, #search {
 .listItem:hover,
 .pane-data:hover {
   color: rgb(0, 199, 199);
-  border: 3px solid #2eb9ce;
+  border: 2px solid #2eb9ce;
 }
 
 li img {
   background-color: #1e79696e;
   border-radius: 17px;
   margin: 4px;
-}
-
-h4 {
-  margin: 0;
-}
-
-li {
-  margin: 3px;
 }
 
 @media only screen and (max-width: 534px) {
@@ -147,7 +182,7 @@ li {
 }
 
 @media only screen and (max-width: 976px) {
-  .listItem {
+  .listItem, h4, h3, p {
     font-size: 2vw;
   }
 }

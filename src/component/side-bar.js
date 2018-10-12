@@ -40,10 +40,12 @@ export default class SideBar extends Component {
             <div className="sideBar">
             {/* search bar */}
             <div className="cursor">
-              <input className="rq-form-element" autoFocus
+              <input autoFocus
+                // aria-label={labelText}
+                aria-required="true"
                 type={"search"} 
                 id={"search"} 
-                placeholder={"...Venue Search"} 
+                placeholder={"...Filter Listing Here"} 
                 onChange={this.handleChange}/>
             </div>
             {/* foursquare logo */}

@@ -50,12 +50,10 @@ class Helper {
       )
         .then(Helper.checkStatus)
         .then(response => response.json())
-        .catch(error => {
-          alert(
-            'Unable to reach Foursquare' +
-              error.response
-          );
-        });
+        // .catch(error => {
+        //   alert('Unable to reach Foursquare: ' + error.response);
+        // }
+        ;
     }
   }
   

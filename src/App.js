@@ -80,8 +80,6 @@ handleListItemClick = venue => {
         handleListItemClick={this.handleListItemClick} />
         <Map {...this.state}
         handleMarkerClick={this.handleMarkerClick} />
-        {/* <Details {...this.state} 
-        handleListItemClick={this.handleListItemClick} /> */}
         <InfoPane {...this.state} 
         handleListItemClick={this.handleListItemClick}/>
       </div>
