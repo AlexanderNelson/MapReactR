@@ -13,8 +13,14 @@ body {
 
 #title {
   text-align: center;
+  background-image: url("images/drk-bg.png");
+  text-shadow: 4px 4px 2px rgb(12, 7, 7);
 }
-
+.map {
+  border:10px solid #0b0;
+  min-height:250px;
+  height:100%;
+  width: 100%;}
 p {
   font-size: 1.3vw;
 }
@@ -71,20 +77,23 @@ p {
 
 #search {
   animation: blink 1s infinite;
-  animation-timing-function: cubic-bezier(0.9, -0.43, 0.77, 1.15);
-  opacity: 1;
+  animation-timing-function: cubic-bezier(0.9, -0.43, 0.77, 1.15);  
+}
+
+.info-pane h3, #search {
+  background: #92bfe6;
+  border: 1px solid gray;
   text-align: center;
   font-weight: 900;
   font-size: 1.7vw;
   color: #500000;
-  background: #92bfe6;
   width: 100%;
-  border: 3px solid gray;
   font-family: 'Lato', sans-serif;
   padding: 4px 1px;
   -webkit-box-shadow: inset 10px 15px 21px -8px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: inset 10px 15px 21px -8px rgba(0, 0, 0, 0.75);
   box-shadow: inset 10px 15px 21px -8px rgba(0, 0, 0, 0.75);
+
 }
 
 @keyframes blink {
@@ -98,12 +107,16 @@ p {
 }
 
 .foursquare,
-.info-pane h2, h3, #title {
+.info-pane h2, #title {
+  background:  linear-gradient(
+    rgba(128, 117, 117, 0.45), 
+    rgb(0, 0, 0)
+  ), url("images/drk-bg.png");
+  background-color: #2eb9ce38;
   text-align: center;
   font-weight: 900;
   font-size: 16px;
-  color: #500000;
-  background: #bfbebe;
+  color: #d8cccc;
   width: 100%;
   border: 0;
   font-family: 'Lato', sans-serif;
@@ -145,6 +158,10 @@ p {
   padding: 2px;
 }
 
+.gm-style-iw h3 {
+  color: #2f4e4e;
+
+}
 .listItem, .pane-data {
   list-style: none;
   font-size: 1rem;
