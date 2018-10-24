@@ -39,7 +39,7 @@ export default class InfoPane extends Component {
     render() {
         return (
             <div className="info-pane">
-              <h3 id="info-cards" tabindex="0">Info Cards</h3>
+              <h3 id="info-cards" tabIndex="0">Info Cards</h3>
 
             {/* foursquare logo */}
             <img className="foursquare" src={window.location.origin + '/foursquare.png'} alt="powered by foursquare"/>

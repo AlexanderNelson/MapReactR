@@ -6,8 +6,6 @@ import SideBar from './component/side-bar';
 import InfoPane from './component/info-pane';
 import SkipLinks from './component/skip-links';
 
-
-
 class App extends Component {
     constructor() {
       super();
@@ -74,14 +72,14 @@ handleListItemClick = venue => {
     return (
       <main role="main">
       
-      <header role="banner" id="title" autofocus>
-        <h1 tabindex="0">MapReactR</h1>
+      <header role="banner" id="title">
+        <h1>MapReactR</h1>
         <h2>Information and Locations of Taco Providers</h2>
+        </header>
 
         {/* skip links to get focus across to info cards */}
         <SkipLinks/>
 
-      </header>
       <div className="App">
         <SideBar id="side-bar" role="main" aria-label="venue filter results list" {...this.state} 
         handleListItemClick={this.handleListItemClick} />
