@@ -2,7 +2,7 @@
 //above google comment required for marker animations
 import React, {Component} from "react";
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from "react-google-maps";
-import ErrorBoundary from "./error-boundary";
+// import ErrorBoundary from "./error-boundary";
 
 
 
