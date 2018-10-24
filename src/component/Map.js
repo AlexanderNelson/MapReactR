@@ -4,8 +4,6 @@ import React, {Component} from "react";
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from "react-google-maps";
 // import ErrorBoundary from "./error-boundary";
 
-
-
 const MyMapComponent = withScriptjs(
     withGoogleMap(props => (
   <GoogleMap
@@ -33,19 +31,13 @@ const MyMapComponent = withScriptjs(
         venueInfo.bestPhoto && (
         <InfoWindow>
           <React.Fragment>
-              <img
-              src={`${venueInfo.bestPhoto.prefix}170x170${
-                  venueInfo.bestPhoto.suffix
-              }`}
-              alt={"Venue"}
-              />
+            <img src={`${venueInfo.bestPhoto.prefix}170x170${venueInfo.bestPhoto.suffix}`}alt={"Venue"}/>
             <h3>{venueInfo.name}</h3>
             <a href={venueInfo.shortUrl}>More Info</a>
             <p>{venueInfo.price.currency}</p>
             <p>{venueInfo.contact.formattedPhone}</p>
             <p>{venueInfo.location.formattedAddress[0]}</p>
             <p>{venueInfo.location.formattedAddress[1]}</p>
-
           </React.Fragment>
         </InfoWindow>
         )}
@@ -65,7 +57,7 @@ export default class Map extends Component {
         googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAJlJZKFDJ7twOL6eu4CgPYK2awQ-P9WkU"
         loadingElement={<div style={{ height: `100%` }} />}
         //sizes map to allow room for sidebar
-        containerElement={<div style={{ height: `100%`, width: `49%` }} />}
+        containerElement={<div style={{ height: `100%`, width: `50%` }} />}
         mapElement={<div style={{ height: `100%` }} />}
       />
 

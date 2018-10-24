@@ -5,6 +5,8 @@ import Map from "./component/Map";
 import SideBar from './component/side-bar';
 import InfoPane from './component/info-pane';
 import SkipLinks from './component/skip-links';
+import ErrorPage from './component/error-page';
+
 
 class App extends Component {
     constructor() {
@@ -71,14 +73,15 @@ handleListItemClick = venue => {
   render() {
     return (
       <main role="main">
-      
       <header role="banner" id="title">
-        <h1>MapReactR</h1>
-        <h2>Information and Locations of Taco Providers</h2>
-        </header>
 
         {/* skip links to get focus across to info cards */}
         <SkipLinks/>
+
+        <h1>MapReactR</h1>
+        <h2>Information and Locations of Taco Providers</h2>
+        <p>(You can use the list filter on the left or quickly reference the info cards on the right.)</p>
+      </header>
 
       <div className="App">
         <SideBar id="side-bar" role="main" aria-label="venue filter results list" {...this.state} 
@@ -87,6 +90,7 @@ handleListItemClick = venue => {
         {/* skip links to get across to info cards or back to search field */}
         <SkipLinks/>
 
+        <ErrorPage/>
         <Map role="complementary" aria-label="map"{...this.state}
         handleMarkerClick={this.handleMarkerClick} />
         <InfoPane role="main" aria-label="info cards"{...this.state} 
