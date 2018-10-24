@@ -70,17 +70,17 @@ handleListItemClick = venue => {
     }
   render() {
     return (
-      <main>
-      <header id="title">
+      <main role="main">
+      <header role="banner" id="title">
         <h1 >MapReactR</h1>
         <h2>Information and Locations of Taco Providers</h2>
       </header>
       <div className="App">
-        <SideBar {...this.state} 
+        <SideBar role="main" aria-label="venue filter results list" {...this.state} 
         handleListItemClick={this.handleListItemClick} />
-        <Map {...this.state}
+        <Map role="complementary" aria-label="map"{...this.state}
         handleMarkerClick={this.handleMarkerClick} />
-        <InfoPane {...this.state} 
+        <InfoPane role="main" aria-label="info cards"{...this.state} 
         handleListItemClick={this.handleListItemClick}/>
       </div>
       </main>
