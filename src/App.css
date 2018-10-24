@@ -7,6 +7,27 @@
   background-color: #262932b0
 }
 
+/* skip links deactivated until further implemntation */
+  .skip-links {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+.skip-links a {
+  position: absolute;
+  top: -3em;
+  background-color: #000;
+  color: #fff;
+  padding: 0.5em 0.75em;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.skip-links a:focus {
+  top: 0;
+}
+
 body {
   background: #00000080;
 }
@@ -126,22 +147,6 @@ p {
   box-shadow: inset 10px 15px 21px -8px rgba(0, 0, 0, 0.75);
 }
 
-.pane-data {
-  list-style: none;
-  font-size: .5rem;
-  padding: 1px;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
-  border-radius: 4px;
-  font-family: cursive;
-  margin: 4px;
-  color: #2f4e4e;
-  cursor: pointer;
-  border: 2px solid #2eb9ce38;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-}
-
 .sideBar {
   width: 24%;
   border: 1px solid #1e4277;
@@ -162,29 +167,37 @@ p {
   color: #2f4e4e;
 
 }
+
+.pane-data {
+  font-size: .5rem;
+  flex-flow: column;
+}
+
 .listItem, .pane-data {
   list-style: none;
   font-size: 1rem;
   padding: 1px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
-  border-radius: 4px;
+  border-radius: 3px;
   font-family: cursive;
   background-image: url("images/wht-bg.jpg");
-  margin: 4px;
+  margin: 4px 0;
   color: #2f4e4e;
   cursor: pointer;
   border: 3px solid #2eb9ce38;
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .listItem:hover,
-.pane-data:hover {
+.pane-data:hover, .listItem:focus,
+.pane-data:focus {
   color: rgb(0, 199, 199);
-  border: 2px solid #2eb9ce;
+  border: 3px solid #2eb9ce;
 }
 
-li img {
+button img {
   background-color: #1e79696e;
   border-radius: 17px;
   margin: 4px;

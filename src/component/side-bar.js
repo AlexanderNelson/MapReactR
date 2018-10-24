@@ -53,12 +53,12 @@ export default class SideBar extends Component {
             <div className="sideBar">
             {/* search bar */}
             <div className="cursor">
-              <input autoFocus
+              <input
                 // aria-label={labelText}
                 role="Search"
                 aria-required="true"
                 type={"search"} 
-                id={"search"}
+                id="search"
                 tabIndex="0"
                 placeholder={"...Filter Listing Here"} 
                 onChange={this.handleChange}/>

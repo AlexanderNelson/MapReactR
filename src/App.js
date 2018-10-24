@@ -4,6 +4,8 @@ import SquareAPI from "./api";
 import Map from "./component/Map";
 import SideBar from './component/side-bar';
 import InfoPane from './component/info-pane';
+import SkipLinks from './component/skip-links';
+
 
 
 class App extends Component {
@@ -71,17 +73,29 @@ handleListItemClick = venue => {
   render() {
     return (
       <main role="main">
-      <header role="banner" id="title">
-        <h1 >MapReactR</h1>
+      
+      <header role="banner" id="title" autofocus>
+        <h1 tabindex="0">MapReactR</h1>
         <h2>Information and Locations of Taco Providers</h2>
+
+        {/* skip links to get focus across to info cards */}
+        <SkipLinks/>
+
       </header>
       <div className="App">
-        <SideBar role="main" aria-label="venue filter results list" {...this.state} 
+        <SideBar id="side-bar" role="main" aria-label="venue filter results list" {...this.state} 
         handleListItemClick={this.handleListItemClick} />
+
+        {/* skip links to get across to info cards or back to search field */}
+        <SkipLinks/>
+
         <Map role="complementary" aria-label="map"{...this.state}
         handleMarkerClick={this.handleMarkerClick} />
         <InfoPane role="main" aria-label="info cards"{...this.state} 
         handleListItemClick={this.handleListItemClick}/>
+
+        {/* skip links to get across to top of info cards or back to search field */}
+        <SkipLinks/>
       </div>
       </main>
     );
