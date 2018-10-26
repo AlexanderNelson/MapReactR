@@ -51,7 +51,7 @@ const MyMapComponent = withScriptjs(
 );
 
 
-export defalt class Map extends Component {
+export default class Map extends Component {
     render() {
         return (
         <ErrorBoundary>
