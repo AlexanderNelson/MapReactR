@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-// import ListItem from "./list-item";
 import PaneData from "../rightBar/pane-data";
 
 export default class InfoList extends Component {

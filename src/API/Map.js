@@ -67,7 +67,5 @@ export default class Map extends Component {
               mapElement={<div style={{ height: `100%` }} />}
               />
         </ErrorBoundary>
-        
-
     )}
 }
