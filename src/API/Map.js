@@ -5,8 +5,6 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from "reac
 import ErrorBoundary from "../component/errorHandling/error-boundary";
 
 
-window.gm_authFailure = ()=>{alert("Please check your Google API key")};
-
 const MyMapComponent = withScriptjs(
     withGoogleMap(props => (
   <GoogleMap
@@ -52,7 +50,6 @@ const MyMapComponent = withScriptjs(
 
 );
 
-
 export default class Map extends Component {
     render() {
         return (
@@ -63,8 +60,8 @@ export default class Map extends Component {
             <MyMapComponent className="map"
               {...this.props}
               // error from broken url will hold frame size and display info
-              // wrong api key shows default google error message
-              googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=IzaSyAJlJZKFDJ7twOL6eu4CgPYK2awQ-P9WkU"
+              // wrong api key shows default google error message + alert box. happens in errorboundary.js
+              googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAJlJZKFDJ7twOL6eu4CgPYK2awQ-P9WkU"
               loadingElement={<div style={{ height: `100%` }} />}
               //sizes map to allow room for sidebar
               containerElement={<div style={{ height: `100%`, width: `50%` }} />}

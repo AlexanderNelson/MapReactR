@@ -6,6 +6,7 @@ class ErrorBoundary extends React.Component {
       this.state = { error: null, errorInfo: null };
     }
     
+    
     componentDidCatch(error, errorInfo) {
       // Catch errors in any components below and re-render with error message
       this.setState({
@@ -33,4 +34,6 @@ class ErrorBoundary extends React.Component {
       return this.props.children;
     }  
   }
+  window.gm_authFailure = ()=>{alert("Please check your Google API key")}
+
   export default ErrorBoundary
