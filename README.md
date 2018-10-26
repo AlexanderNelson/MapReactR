@@ -1,4 +1,112 @@
+
+MapReactR
+==========
+
+Currently MapReactr pulls data from Google Maps and Foursquare API's to locate tacos in a specific area(Austin, TX). Future implementations will add choose by city or near-me and venue type. 
+
+MapReactR has built in ARIA landmarks and accessibility features to assist screen readers and keyboard navigation.
+
+Note- This build uses the react-google-maps library for map functionality.
+
+
+[![Build status][shield-build]](#)
+[![Dependencies][shield-dependencies]](#)
+
+
+Table of Contents
+-----------------
+
+  * [Requirements](#requirements)
+  * [Usage](#usage)
+  * [Contributing](#contributing)
+  * [Support](#support)
+  * [License](#license)
+
+
+Requirements
+------------
+
+MapReactR requires the following to run:
+
+  * [React Router][ReactRouter] React Router is a collection of navigational components that compose declaratively with your application. It is already included in this repository.
+  * [Node js][Nodejs] Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine
+
+
+Usage
+-----
+MapReactR can be used to filter list of restaurants on the left bar or can be quickly browsed for details on the right. Clicking a venue from either list will open a pic and info on the corresponding map marker. 
+
+#### Building Project
+
+* Install node.js. (install node with the PATH variable)
+* Install the React package using this command: ```npm install -g create-react-app```
+* CD to your project directory in your command prompt/terminal
+* Run command: ```npm start```
+* App will open in browser at: localhost:3000 or other available if prompted otherwise.
+* See original detailed project info at bottom of this ReadMe.
+
+#### Getting Started With Current Project
+
+* Clone this repo from https://github.com/AlexanderNelson/mapreactr.git
+* Run ```npm Install``` to get the latest releases
+* CD to your project directory in your command prompt/terminal
+* Run command: ```npm start```
+* App will open in browser at: localhost:3000 or other available if prompted otherwise.
+* App will require your personal keys from Foursquare and Google Maps in each of the files located in the "API" folder
+
+#### Filtering and Getting Info on Venues
+
+MapReactR will return a list of taco venues.
+
+Enter the starting letters or title words to search for in the input bar.
+
+List will filter as you type.
+
+Click the restaurant on the filtered list to open information on the map.
+
+As an alternative, the quick reference list on the right can be used to browse addresses then clicked to open more info and picture on map.
+
+
+#### Projects:
+
+Add:
+
+* City Choices
+* Venue Choices
+* Rating and Price Data
+* Directions
+
+
+Contributing
+------------
+
+To contribute, clone this repo locally and commit your code on a separate branch. Please test and format before opening a pull-request:
+
+
+Support
+---------------------
+
+Email: AmVetServ@gmail.com
+
+
+License
+-------
+
+Copyright &copy; 2018, Alexander Nelson
+
+
+
+[ReactRouter]: https://reacttraining.com/react-router/
+[Nodejs]: https://nodejs.org/en/
+
+[shield-dependencies]: https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg
+[shield-build]: https://img.shields.io/badge/build-passing-brightgreen.svg
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
+Detailed Original Project Guide
+==========
 
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md).
