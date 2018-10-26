@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import PaneData from "../rightBar/pane-data";
+import PaneData from "./pane-data";
 
 export default class InfoList extends Component {
     render() {

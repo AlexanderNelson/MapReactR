@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import InfoList from "../leftBar/info-list";
+import InfoList from "./info-list";
 
 export default class InfoPane extends Component {
     constructor() {

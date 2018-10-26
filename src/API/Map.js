@@ -4,6 +4,9 @@ import React, {Component} from "react";
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from "react-google-maps";
 import ErrorBoundary from "../component/errorHandling/error-boundary";
 
+
+window.gm_authFailure = ()=>{alert("Please check your Google API key")};
+
 const MyMapComponent = withScriptjs(
     withGoogleMap(props => (
   <GoogleMap
@@ -46,6 +49,7 @@ const MyMapComponent = withScriptjs(
     })}
   </GoogleMap>
 ))
+
 );
 
 
@@ -60,11 +64,12 @@ export default class Map extends Component {
               {...this.props}
               // error from broken url will hold frame size and display info
               // wrong api key shows default google error message
-              googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAJlJZKFDJ7twOL6eu4CgPYK2awQ-P9WkU"
+              googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=IzaSyAJlJZKFDJ7twOL6eu4CgPYK2awQ-P9WkU"
               loadingElement={<div style={{ height: `100%` }} />}
               //sizes map to allow room for sidebar
               containerElement={<div style={{ height: `100%`, width: `50%` }} />}
               mapElement={<div style={{ height: `100%` }} />}
+              
               />
         </ErrorBoundary>
     )}
