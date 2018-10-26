@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import ErrorBoundary from './component/error-boundary';
+import ErrorBoundary from './component/errorHandling/error-boundary';
 
 ReactDOM.render(<ErrorBoundary><App /></ErrorBoundary>, document.getElementById('root'));
 

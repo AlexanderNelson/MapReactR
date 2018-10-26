@@ -46,9 +46,6 @@ body {
   min-height:250px;
   height:100%;
   width: 100%;}
-p {
-  font-size: 1.3vw;
-}
 
 a {
   font-size: 1.4vw;
@@ -203,10 +200,30 @@ button img {
   margin: 4px;
 }
 
-.failMSG {
-  color: #2eb9ce;
-  font-size: 2vw;
+/* holds the width of the error frame. optimized for map placement then app  */
+.errFrame {
+  width: 50%;
 }
+
+.failMSG {
+  margin: 0px;
+  font-family: cursive;
+  color: #c1cc2f;
+}
+
+details {
+  color: #2eb9ce;
+}
+
+.info {
+  color: #c4cecf;
+}
+
+.info, details, .failMSG {
+  margin: 4px;
+  padding: 2px;
+}
+
 @media only screen and (max-width: 534px) {
 
   .listItem,

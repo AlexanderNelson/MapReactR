@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import SquareAPI from "./api";
-import Map from "./component/Map";
-import SideBar from './component/side-bar';
-import InfoPane from './component/info-pane';
+import SquareAPI from "./API/fs-index";
+import Map from "./API/Map";
+import SideBar from './component/leftBar/side-bar';
+import InfoPane from './component/rightBar/info-pane';
 import SkipLinks from './component/skip-links';
 // import TestBar from './component/test';
 // import ErrorBoundary from './component/error-boundary';
@@ -84,13 +84,16 @@ handleListItemClick = venue => {
 
         {/* skip links to get focus across to info cards */}
         <SkipLinks/>
-
+        
         <h1>MapReactR</h1>
         <h2>Information and Locations of Taco Providers</h2>
         <p>(You can use the list filter on the left or quickly reference the info cards on the right.)</p>
       </header>
 
       <div className="App">
+      {/* uncomment below to test full app error message(for maps test, break api key or url in map.js) */}
+      {/* {null.map(errorTestSwitch => errorTestSwitch)} */}
+      {/* Error from above flashes for only 2 seconds in developer mode, build and deploy for sustained testing */}
           <SideBar id="side-bar" role="main" aria-label="venue filter results list" {...this.state} 
         handleListItemClick={this.handleListItemClick} />
         
