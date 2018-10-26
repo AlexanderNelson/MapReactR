@@ -5,7 +5,8 @@ import Map from "./component/Map";
 import SideBar from './component/side-bar';
 import InfoPane from './component/info-pane';
 import SkipLinks from './component/skip-links';
-import ErrorPage from './component/error-page';
+// import TestBar from './component/test';
+// import ErrorBoundary from './component/error-boundary';
 
 
 class App extends Component {
@@ -68,7 +69,13 @@ handleListItemClick = venue => {
         });
         this.setState ({ venues, center, markers });
         console.log(results)
-      });
+      })
+      .catch(error => {
+        const FSFailMsg = document.createElement('div');
+        FSFailMsg.setAttribute('class', 'failMSG')
+        FSFailMsg.innerHTML = "Foursquare is Down with error of " + error + "! GRAB THE CAT!!";
+        document.getElementsByClassName('sideBar')[0].appendChild(FSFailMsg);
+      })
     }
   render() {
     return (
@@ -84,17 +91,20 @@ handleListItemClick = venue => {
       </header>
 
       <div className="App">
-        <SideBar id="side-bar" role="main" aria-label="venue filter results list" {...this.state} 
+          <SideBar id="side-bar" role="main" aria-label="venue filter results list" {...this.state} 
         handleListItemClick={this.handleListItemClick} />
+        
 
         {/* skip links to get across to info cards or back to search field */}
         <SkipLinks/>
 
-        <ErrorPage/>
-        <Map role="complementary" aria-label="map"{...this.state}
+          <Map role="complementary" aria-label="map"{...this.state}
         handleMarkerClick={this.handleMarkerClick} />
-        <InfoPane role="main" aria-label="info cards"{...this.state} 
+          {/* <TestBar/> */}
+
+          <InfoPane role="main" aria-label="info cards"{...this.state} 
         handleListItemClick={this.handleListItemClick}/>
+        
 
         {/* skip links to get across to top of info cards or back to search field */}
         <SkipLinks/>

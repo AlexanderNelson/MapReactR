@@ -2,7 +2,9 @@
 //above google comment required for marker animations
 import React, {Component} from "react";
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from "react-google-maps";
-// import ErrorBoundary from "./error-boundary";
+import ErrorBoundary from "./error-boundary";
+// import ErrorPage from './error-page';
+
 
 const MyMapComponent = withScriptjs(
     withGoogleMap(props => (
@@ -52,14 +54,17 @@ const MyMapComponent = withScriptjs(
 export default class Map extends Component {
     render() {
         return (
-        <MyMapComponent className="map"
-        {...this.props}
-        googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAJlJZKFDJ7twOL6eu4CgPYK2awQ-P9WkU"
-        loadingElement={<div style={{ height: `100%` }} />}
-        //sizes map to allow room for sidebar
-        containerElement={<div style={{ height: `100%`, width: `50%` }} />}
-        mapElement={<div style={{ height: `100%` }} />}
-      />
+        <ErrorBoundary>
+            <MyMapComponent className="map"
+              {...this.props}
+              googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAJlJZKFDJ7twOL6eu4CgPYK2awQ-P9WkU"
+              loadingElement={<div style={{ height: `100%` }} />}
+              //sizes map to allow room for sidebar
+              containerElement={<div style={{ height: `100%`, width: `50%` }} />}
+              mapElement={<div style={{ height: `100%` }} />}
+              />
+        </ErrorBoundary>
+        
 
     )}
 }

@@ -49,11 +49,8 @@ class Helper {
         requestData
       )
         .then(Helper.checkStatus)
-        .then(response => response.json())
-        // .catch(error => {
-        //   alert('Unable to reach Foursquare: ' + error.response);
-        // }
-        ;
+        .then(response => response.json()
+        );
     }
   }
   
