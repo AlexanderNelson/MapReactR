@@ -190,7 +190,8 @@ p {
 }
 
 .listItem:hover,
-.pane-data:hover, .listItem:focus,
+.pane-data:hover, 
+.listItem:focus,
 .pane-data:focus {
   color: rgb(0, 199, 199);
   border: 3px solid #2eb9ce;

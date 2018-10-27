@@ -5,7 +5,6 @@ import Map from "./API/Map";
 import SideBar from './component/leftBar/side-bar';
 import InfoPane from './component/rightBar/info-pane';
 import SkipLinks from './component/skip-links';
-import { InfoWindow } from 'react-google-maps';
 
 class App extends Component {
     constructor() {
@@ -24,14 +23,13 @@ class App extends Component {
 closeAllMarkers = () => {
   const markers = this.state.markers.map(marker => {
     marker.isOpen = false;
-    console.log(marker.isOpen)
     return marker;
   });
   this.setState({ markers: Object.assign(this.state.markers, markers) });
 };
 
 handleMarkerClick = marker => {
-  // console.log(marker);
+  this.closeAllMarkers();
   marker.isOpen = true;
   this.setState({markers: Object.assign(this.state.markers, marker) });
   const venue = this.state.venues.find(venue => venue.id === marker.id);
@@ -39,16 +37,12 @@ handleMarkerClick = marker => {
   SquareAPI.getVenueDetails(marker.id).then(res => {
     const newVenue = Object.assign(venue, res.response.venue);
     this.setState({venues: Object.assign(this.state.venues, newVenue)});
-    // console.log(newVenue);
-    // console.log(res)
   });
 };
 
 handleListItemClick = venue => {
   const marker = this.state.markers.find(marker => marker.id === venue.id);
-  console.log(InfoWindow + "state close/open");
   this.handleMarkerClick(marker);
-  console.log(marker);
 }
     componentDidMount() {
       SquareAPI.search({
@@ -68,7 +62,6 @@ handleListItemClick = venue => {
           };
         });
         this.setState ({ venues, center, markers });
-        console.log(results)
       })
       .catch(error => {
         const FSFailMsg = document.createElement('div');
@@ -102,6 +95,7 @@ handleListItemClick = venue => {
         <SkipLinks/>
 
           <Map role="complementary" aria-label="map"{...this.state}
+          closeAllMarkers={this.closeAllMarkers}
         handleMarkerClick={this.handleMarkerClick} />
           {/* <TestBar/> */}
 

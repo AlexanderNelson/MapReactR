@@ -4,14 +4,13 @@ import React, {Component} from "react";
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from "react-google-maps";
 import ErrorBoundary from "../component/errorHandling/error-boundary";
 
-
 const MyMapComponent = withScriptjs(
     withGoogleMap(props => (
   <GoogleMap
     id="map"
     defaultZoom={8}
     zoom={props.zoom}
-    defaultCenter={{ lat: -34.397, lng: 150.644 }}
+    defaultCenter={parseFloat({ lat: -34.397, lng: 150.644 })}
     center={props.center}
     >
     {props.markers &&
@@ -30,7 +29,7 @@ const MyMapComponent = withScriptjs(
         >
         {marker.isOpen &&
         venueInfo.bestPhoto && (
-        <InfoWindow>
+        <InfoWindow onCloseClick={() => props.closeAllMarkers()}>
           <React.Fragment>
             <img src={`${venueInfo.bestPhoto.prefix}170x170${venueInfo.bestPhoto.suffix}`}alt={"Venue"}/>
             <h3>{venueInfo.name}</h3>
@@ -46,8 +45,7 @@ const MyMapComponent = withScriptjs(
       );
     })}
   </GoogleMap>
-))
-
+  ))
 );
 
 export default class Map extends Component {
