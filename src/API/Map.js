@@ -7,6 +7,8 @@ import ErrorBoundary from "../component/errorHandling/error-boundary";
 const MyMapComponent = withScriptjs(
     withGoogleMap(props => (
   <GoogleMap
+    role="application"
+    aria-label="map"
     id="map"
     defaultZoom={8}
     zoom={props.zoom}

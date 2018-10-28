@@ -31,6 +31,7 @@ MapReactR requires the following to run:
   * [React Router][ReactRouter] React Router is a collection of navigational components that compose declaratively with your application. It is already included in this repository.
   * [Node js][Nodejs] Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine
 
+Note- Service Worker for the standard create-react-app has been enabled and will only be functional in production build
 
 Usage
 -----

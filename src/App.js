@@ -73,39 +73,39 @@ handleListItemClick = venue => {
   render() {
     return (
       <main role="main">
-      <header role="banner" id="title">
+        <header role="banner" id="title">
 
-        {/* skip links to get focus across to info cards */}
-        <SkipLinks/>
-        
-        <h1>MapReactR</h1>
-        <h2>Information and Locations of Taco Providers</h2>
-        <p>(You can use the list filter on the left or quickly reference the info cards on the right.)</p>
-      </header>
+          {/* skip links to get focus across to info cards */}
+          <SkipLinks/>
+          
+          <h1>MapReactR</h1>
+          <h2>Information and Locations of Taco Providers</h2>
+          <p>(You can use the list filter on the left or quickly reference the info cards on the right.)</p>
+        </header>
 
-      <div className="App">
-      {/* uncomment below to test full app error message(for maps test, break api key or url in map.js) */}
-      {/* {null.map(errorTestSwitch => errorTestSwitch)} */}
-      {/* Error from above flashes for only 2 seconds in developer mode, build and deploy for sustained testing */}
-          <SideBar id="side-bar" role="main" aria-label="venue filter results list" {...this.state} 
-        handleListItemClick={this.handleListItemClick} />
-        
+        <div className="App">
+          {/* uncomment below to test full app error message(for maps test, break api key or url in map.js) */}
+          {/* {null.map(errorTestSwitch => errorTestSwitch)} */}
+          {/* Error from above flashes for only 2 seconds in developer mode, build and deploy for sustained testing */}
+            <SideBar id="side-bar" role="main" aria-label="venue filter results list" {...this.state} 
+          handleListItemClick={this.handleListItemClick} />
+          
 
-        {/* skip links to get across to info cards or back to search field */}
-        <SkipLinks/>
+          {/* skip links to get across to info cards or back to search field */}
+          <SkipLinks/>
 
           <Map role="complementary" aria-label="map"{...this.state}
-          closeAllMarkers={this.closeAllMarkers}
-        handleMarkerClick={this.handleMarkerClick} />
-          {/* <TestBar/> */}
+            closeAllMarkers={this.closeAllMarkers}
+            handleMarkerClick={this.handleMarkerClick} />
+            {/* <TestBar/> */}
 
           <InfoPane role="main" aria-label="info cards"{...this.state} 
-        handleListItemClick={this.handleListItemClick}/>
-        
+            handleListItemClick={this.handleListItemClick}/>
+          
 
-        {/* skip links to get across to top of info cards or back to search field */}
-        <SkipLinks/>
-      </div>
+          {/* skip links to get across to top of info cards or back to search field */}
+          <SkipLinks/>
+        </div>
       </main>
     );
   }
