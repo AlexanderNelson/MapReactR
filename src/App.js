@@ -34,6 +34,7 @@ handleMarkerClick = marker => {
   this.setState({markers: Object.assign(this.state.markers, marker) });
   const venue = this.state.venues.find(venue => venue.id === marker.id);
 
+
   SquareAPI.getVenueDetails(marker.id).then(res => {
     const newVenue = Object.assign(venue, res.response.venue);
     this.setState({venues: Object.assign(this.state.venues, newVenue)});
@@ -87,7 +88,7 @@ handleListItemClick = venue => {
           {/* uncomment below to test full app error message(for maps test, break api key or url in map.js) */}
           {/* {null.map(errorTestSwitch => errorTestSwitch)} */}
           {/* Error from above flashes for only 2 seconds in developer mode, build and deploy for sustained testing */}
-            <SideBar id="side-bar" role="main" aria-label="venue filter results list" {...this.state} 
+          <SideBar id="side-bar" role="main" aria-label="venue filter results list" {...this.state} 
           handleListItemClick={this.handleListItemClick} />
           
 
@@ -97,7 +98,8 @@ handleListItemClick = venue => {
           <Map role="complementary" aria-label="map"{...this.state}
             closeAllMarkers={this.closeAllMarkers}
             handleMarkerClick={this.handleMarkerClick} />
-            {/* <TestBar/> */}
+
+          {/* <TestBar/> */}
 
           <InfoPane role="main" aria-label="info cards"{...this.state} 
             handleListItemClick={this.handleListItemClick}/>

@@ -4,6 +4,7 @@ import React, {Component} from "react";
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from "react-google-maps";
 import ErrorBoundary from "../component/errorHandling/error-boundary";
 
+
 const MyMapComponent = withScriptjs(
     withGoogleMap(props => (
   <GoogleMap
@@ -12,8 +13,12 @@ const MyMapComponent = withScriptjs(
     id="map"
     defaultZoom={8}
     zoom={props.zoom}
-    defaultCenter={parseFloat({ lat: -34.397, lng: 150.644 })}
-    center={props.center}
+    defaultCenter={{ lat: -34.397, lng: 150.644 }}
+    // center={props.center}
+    center={{
+      lat: parseFloat(props.center.lat),
+      lng: parseFloat(props.center.lng)
+  }}
     >
     {props.markers &&
       props.markers
@@ -27,7 +32,10 @@ const MyMapComponent = withScriptjs(
         position={{ lat: marker.lat, lng: marker.lng }}
         onClick={() => props.handleMarkerClick(marker)}
         //markers drop when loaded and bounce if only one location left
-        animation={arr.length === 1 ? google.maps.Animation.BOUNCE : google.maps.Animation.DROP}
+        animation={arr.length === 1 || marker.isOpen ? google.maps.Animation.BOUNCE : google.maps.Animation.DROP}
+        icon={{
+          url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+        }}
         >
         {marker.isOpen &&
         venueInfo.bestPhoto && (
